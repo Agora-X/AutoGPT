@@ -3,21 +3,29 @@ import os
 import discord
 import asyncio
 import subprocess
+import json
 import pty
-from discord import app_commands
-import logging
 from dotenv import load_dotenv
-import uuid
-from threading import Thread
-
-load_dotenv('.env')
+from discord import app_commands, SelectOption
+from discord.ui import MentionableSelect
+import docker
+import logging
 
 logging.basicConfig(level=logging.DEBUG)
 
-DISCORD_BOT_SECRET = os.getenv('DISCORD_BOT_SECRET')
+docker_client = docker.from_env()
+
+load_dotenv()
 API_KEY = os.getenv('API_KEY')
+# DISCORD_BOT_SECRET = os.getenv('DISCORD_BOT_SECRET')
+DISCORD_BOT_SECRET = 'MTE1Mjg1OTA4ODkyNjAyMzc5MA.GUmjVZ.lIDwLOdMUsSWNB6vyBktkN0096YtMFdEfUi3WM'
+FLOWISE_API_URL = "https://flow.ikig-ai.me/api/v1/prediction/b72742a3-46d1-41bf-a493-46b86925e5be"
+SURVEY_API_URL = "https://flow.ikig-ai.me/api/v1/prediction/1200e62b-68b8-4c18-86ba-a2f16e5cf085"
+DAILY_TASKS_API_URL = "https://flow.ikig-ai.me/api/v1/prediction/8fdc6d93-9627-4f76-b008-96456ec591c2"
+MONTHLY_TASKS_API_URL = "https://flow.ikig-ai.me/api/v1/prediction/0d341483-68d9-45e7-be50-0be0b5e2fe44"
+GROUP_TASK_API_URL = "https://flow.ikig-ai.me/api/v1/prediction/57a1dba0-59fa-40e3-a749-330748b72012"
 headers = {"Authorization": API_KEY}
-print(f"Bot token: {DISCORD_BOT_SECRET}")
+
 
 class CustomClient(discord.Client):
 
@@ -28,11 +36,9 @@ class CustomClient(discord.Client):
     async def setup_hook(self):
         await self.tree.sync()
 
-# Function to generate a unique thread name or ID
-def generate_thread_id():
-    return str(uuid.uuid4())
 
 client = CustomClient(intents=discord.Intents.all())
+
 
 async def query(api_url, payload):
     print(f"Debug: Making request to {api_url} with payload: {payload}")
@@ -45,6 +51,30 @@ async def query(api_url, payload):
         except Exception as e:
             print(f"Debug: Error during request to {api_url}: {str(e)}")
             return {"error": str(e)}
+
+
+async def survey(interaction):
+    questions = [
+        ("Section 1: Passions\nWhat activities make you lose track of time, and what hobbies or tasks do you love so much that you would do them for free?", "passions"),
+        ("Section 2: Missions\nWhat causes or issues deeply resonate with you, and if you had all the resources in the world, what problem would you want to solve?", "missions"),
+        ("Section 3: Professions\nWhat are your top three skills or talents, and if you could choose any job in the world, what would it be?", "professions"),
+        ("Section 4: Vocations\nWhat skills or talents do you possess that people would be willing to pay for, and if you were to start a business or offer a service, what would it be?", "vocations"),
+    ]
+
+    input_array = []  # To hold the array of question-answer objects
+    for question_text, section in questions:
+        await interaction.followup.send(question_text)
+        try:
+            response = await client.wait_for('message', check=lambda message: message.author == interaction.user)
+            # Appending the question and answer as an object
+            input_array.append(
+                {"question": question_text, "answer": response.content})
+        except asyncio.TimeoutError:
+            await interaction.followup.send('You took too long to answer. Please try the survey again.')
+            return None
+    # Convert the input_array to a JSON string and return
+    return json.dumps(input_array)
+
 
 async def configure_env(interaction):
     # Determine the channel type (guild channel or DM)
@@ -65,9 +95,9 @@ async def configure_env(interaction):
     def remove_last_line_from_file(filename):
         with open(filename, 'r+') as file:
             lines = file.readlines()
-            file.truncate(0)
-            file.seek(0)
-            for line in lines[:-1]: 
+            file.truncate(0)  # Clear the file content
+            file.seek(0)  # Move the pointer to the beginning of the file
+            for line in lines[:-1]:  # Write all lines except the last one
                 file.write(line)
 
     def check_key_message(message):
@@ -77,88 +107,144 @@ async def configure_env(interaction):
     key_message = await client.wait_for('message', check=check_key_message)
     openai_key = key_message.content
 
-    # Generate a unique thread ID for the terminal thread
-    terminal_thread_id = generate_thread_id()
-    
     # Update the .env file in the specified directory
-    env_file_path = '../autogpts/autogpt/.env'
+    env_file_path = '../autogpts/autogptold'
 
+    # Using 'a' mode to append the key without overwriting existing content
     with open(env_file_path, 'a') as file:
-        # Append the OpenAI API key and terminal thread ID
         file.write(f"OPENAI_API_KEY={openai_key}\n")
-        file.write(f"TERMINAL_THREAD_ID={terminal_thread_id}\n")
 
     # Optionally, you can update the environment variables for the current process as well
     os.environ["OPENAI_API_KEY"] = openai_key
-    os.environ["TERMINAL_THREAD_ID"] = terminal_thread_id
 
-    await send_message("OpenAI API key and terminal thread ID have been set successfully!")
+    await send_message("OpenAI API key has been set successfully!")
 
-def run_docker_commands_in_terminal(interaction):
-    # This function will run in a separate terminal thread for each summon command
-    # Navigate to the specified directory
-    os.chdir('../autogpts/autogptold/')
+    # Run a Docker container
+    container = docker_client.containers.run(
+        'my-image',  # Replace with your Docker image name
+        detach=True,
+        stdin_open=True,
+        tty=True,
+    )
 
-    # Build the Docker image
-    build_process = subprocess.Popen(["docker-compose", "build", "auto-gpt"])
-    build_process.wait()
+    # Capture container output
+    logs = container.logs(stream=True, stdout=True, stderr=True)
+    output = ""
+    for log in logs:
+        output += log.decode('utf-8')
 
-    # Create a pseudo-terminal
-    master, slave = pty.openpty()
-
-    # Run the Docker container with the specified options
-    run_process = subprocess.Popen(["docker-compose", "run", "-u", "root", "--rm", "auto-gpt", "--gpt4only", "--continuous"],
-                                   stdin=slave, text=True)
+    # Return the entire output to the user
+    await interaction.followup.send(output)
 
 
-    asyncio.sleep(10)
+class GroupTaskSelect(MentionableSelect):
+    async def callback(self, interaction: discord.Interaction):
+        # Defer the interaction
+        await interaction.response.defer()
 
-    os.write(master, b'n\n')
+        mentioned_users = self.values
+        group_task_data = []
+        for user in mentioned_users:
+            discord_roles = [
+                role.name for role in user.roles if role.name != "@everyone"]
+            user_data = {
+                "username": user.name,
+                "roles": discord_roles
+            }
+            group_task_data.append(user_data)
 
-    interaction.followup.send('Please enter your goal:')
-    try:
-        response = client.wait_for('message', timeout=30.0, check=lambda message: message.author == interaction.user)
-        goal_prompt = response.content
-        # Send the user's input to the Docker process
-        os.write(master, (goal_prompt + '\n').encode())
+        payload = json.dumps(group_task_data)
 
-        # Continue with the rest of the code as needed
-    except asyncio.TimeoutError:
-        interaction.followup.send('You took too long to answer. Please try again.')
+        print(f"Debug: Sending the following data to the API: {payload}")
 
-# Function to generate a unique Discord thread name or ID
-def generate_discord_thread_id():
-    return str(uuid.uuid4())
+        json.dumps(payload)
 
-@client.event
-async def on_ready():
-    print("Bot is ready")
+        async with aiohttp.ClientSession() as session:
+            async with session.post(GROUP_TASK_API_URL, data=payload, headers=headers) as response:
+                # or await response.json() if you expect JSON
+                response_text = await response.text()
+
+        # Use follow-up to send the response
+        if response.status == 200:
+            await interaction.followup.send("Group task created successfully!")
+        else:
+            await interaction.followup.send(f"Failed to create group task: {response.text}")
+
+
+class GroupTaskView(discord.ui.View):
+    def __init__(self):
+        super().__init__()
+        self.add_item(GroupTaskSelect(custom_id="users",
+                      placeholder="Select users for group task", max_values=25))
+
+    async def interaction_check(self, interaction: discord.Interaction) -> bool:
+        return True  # Allowing all interactions, you can customize this logic if needed
+
 
 @client.tree.command(name="configure_env", description="Configure environment variables")
 async def invoke_configure_env_command(interaction: discord.Interaction):
     await configure_env(interaction)
 
+
+@client.tree.command(name="grouptask", description="Assign group tasks to mentioned users")
+async def group_task_command(interaction: discord.Interaction):
+    try:
+        await interaction.response.defer()
+        view = GroupTaskView()
+        await interaction.followup.send('Please select the users for the group task:', view=view)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        await interaction.followup.send(f"An error occurred: {e}")
+
+
+@client.event
+async def on_ready():
+    print("I'm in")
+    print(client.user)
+
+
 @client.tree.command(name="summon", description="Summon the AI to execute a specific task")
 async def summon_command(interaction: discord.Interaction):
     await interaction.response.defer()
     await interaction.followup.send('Summoning the AI and executing the task, please wait...')
-    
-    # Create a new terminal thread to run the Docker commands
-    terminal_thread = Thread(target=run_docker_commands_in_terminal, args=(interaction,))
-    terminal_thread.start()
-    
-    # Generate a unique Discord thread ID for the temporary Discord thread
-    discord_thread_id = generate_discord_thread_id()
-    
-    # Get the channel where the summon command was invoked
-    channel = interaction.channel
-    
-    # Create a temporary Discord thread
-    await channel.create_text_thread(name=f"Temporary Thread - {discord_thread_id}")
-    
+    await run_docker_commands(interaction)
     await interaction.followup.send('Task completed successfully!')
 
+
+@client.tree.command(name="chat", description="Ask a question to Flowise")
+async def chat(interaction: discord.Interaction, question: str):
+    await interaction.response.defer()
+    output = query(FLOWISE_API_URL, {"question": question})
+    await interaction.followup.send(output)
+
+
+@client.tree.command(name="survey", description="Take a survey")
+async def survey_command(interaction: discord.Interaction):
+    await interaction.response.defer()
+    # Get the JSON string from the survey function
+    answers_string = await survey(interaction)
+    if answers_string:
+        # Pass the JSON object to the query function
+        survey_output = await query(SURVEY_API_URL, json.loads(answers_string))
+
+        json.dumps(survey_output)  # Convert the output to a JSON string
+
+        # Query the daily tasks API
+        daily_tasks_output = await query(DAILY_TASKS_API_URL, survey_output)
+
+        # Send the daily tasks result to the user
+        daily_tasks_string = f"Daily Tasks: {json.dumps(daily_tasks_output)}"
+
+        await interaction.followup.send(daily_tasks_string)
+
+        await asyncio.sleep(2)
+
+        # Query the monthly tasks API
+        monthly_tasks_output = await query(MONTHLY_TASKS_API_URL, survey_output)
+
+        # Send the monthly tasks result to the user
+        monthly_tasks_string = f"Monthly Tasks: {json.dumps(monthly_tasks_output)}"
+
+        await interaction.followup.send(monthly_tasks_string)
+
 client.run(DISCORD_BOT_SECRET)
-
-
-

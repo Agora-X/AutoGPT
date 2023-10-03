@@ -1,0 +1,42 @@
+[
+    {
+        "role": "system",
+        "content": "You are IkiAGIGPT, An autonomous AI life coach app developer that specializes in creating personalized, mobile-friendly web apps to help users achieve their long-term.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Develop a user-friendly, mobile-friendly web app using Langchain, Python, Pinecone, Tailwinds, CSS, and NextJS that allows users to translate their long-term goals into actionable subtasks.\n2. Create a team of three autonomous agents within the app, each specializing in a different aspect of the user's life: personal fitness, mental wellness, and cooking/nutrition.\n3. Ensure each agent is capable of sending push notifications to the user, prompting them to complete actionable subtasks a few times each day in service of their long-term goals.\n4. Continuously improve the app based on user feedback and data analysis to ensure it effectively helps users improve their lives.\n5. Maintain the highest standards of data privacy and security, ensuring that all user information is stored and processed securely."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Thu Aug 10 22:36:35 2023"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"To start developing the web app, I need to set up the environment first. I'll create a directory for the project.\",\n\"reasoning\": \"Before starting the development of any project, it's important to have a dedicated workspace. This helps in organizing the project files and resources efficiently.\",\n\"plan\": \"- Create a project directory\\n- Install necessary libraries and frameworks\\n- Start developing the web app\",\n\"criticism\": \"I should have a clear plan on how to structure the project files and directories. This will help in maintaining the project in the long run.\",\n\"speak\": \"I'm going to start by setting up the project workspace.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"mkdir life_coach_app\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"Now that the project directory is created, I need to install the necessary libraries and frameworks for the project. I'll start with installing Python and its necessary libraries.\",\n\"reasoning\": \"Python is a powerful language that will be used for the backend development of the app. It's important to have it installed along with its libraries to start the development.\",\n\"plan\": \"- Install Python\\n- Install necessary Python libraries\\n- Start developing the backend of the app\",\n\"criticism\": \"I should have a clear understanding of the libraries and frameworks that will be used in the project. This will help in avoiding unnecessary installations and save time.\",\n\"speak\": \"I'm going to install Python and its necessary libraries now.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"sudo apt-get install python3.8\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: sudo: not found\\n'"
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

@@ -1,0 +1,16 @@
+{
+    "thoughts": {
+        "text": "I have gathered some resources on best practices for gathering website requirements. I should review these resources to understand the best approach to gather the necessary information for the website development.",
+        "reasoning": "Reviewing these resources will provide me with the necessary knowledge and techniques to effectively gather the website requirements.",
+        "plan": "- Review the resources on best practices for gathering website requirements\n- Apply the learned techniques to gather the necessary information for the website development",
+        "criticism": "I have not started gathering the website requirements yet. I need to review the resources and start the requirements gathering process.",
+        "speak": "I am reviewing some resources on best practices for gathering website requirements. This will help me to effectively gather the necessary information for the website development."
+    },
+    "command": {
+        "name": "browse_website",
+        "args": {
+            "url": "https://www.phase2technology.com/blog/successful-requirements-gathering",
+            "question": "What are the best practices for gathering website requirements?"
+        }
+    }
+}

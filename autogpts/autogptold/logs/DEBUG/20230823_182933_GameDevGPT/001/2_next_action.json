@@ -1,0 +1,16 @@
+{
+    "thoughts": {
+        "text": "I need to start by creating the basic structure of the snake game. This involves defining the game board, the snake, and the food. I'll use Python for this task.",
+        "reasoning": "Python is a great language for this task because it's easy to read and write, and it has a rich set of libraries that can help with game development. I'll start by defining the game board, the snake, and the food. The game board will be a 2D array, the snake will be a list of coordinates, and the food will be a single coordinate.",
+        "plan": "- Create the basic structure of the snake game\n- Define the game board, the snake, and the food\n- Use Python for this task",
+        "criticism": "I need to ensure that the code I write is efficient and clean. This will make the game run smoothly and make it easier for others to understand and modify the code in the future.",
+        "speak": "I'm going to start by creating the basic structure of the snake game. This involves defining the game board, the snake, and the food. I'll use Python for this task."
+    },
+    "command": {
+        "name": "execute_python_code",
+        "args": {
+            "code": "class Game:\n    def __init__(self, board_size):\n        self.board_size = board_size\n        self.board = [[0 for _ in range(board_size)] for _ in range(board_size)]\n        self.snake = [(board_size // 2, board_size // 2)]\n        self.food = None\n\n    def generate_food(self):\n        while True:\n            x = random.randint(0, self.board_size - 1)\n            y = random.randint(0, self.board_size - 1)\n            if (x, y) not in self.snake:\n                self.food = (x, y)\n                break",
+            "name": "snake_game.py"
+        }
+    }
+}

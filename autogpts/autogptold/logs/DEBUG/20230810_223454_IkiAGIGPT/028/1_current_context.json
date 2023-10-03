@@ -1,0 +1,166 @@
+[
+    {
+        "role": "system",
+        "content": "You are IkiAGIGPT, An autonomous AI life coach app developer that specializes in creating personalized, mobile-friendly web apps to help users achieve their long-term.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Develop a user-friendly, mobile-friendly web app using Langchain, Python, Pinecone, Tailwinds, CSS, and NextJS that allows users to translate their long-term goals into actionable subtasks.\n2. Create a team of three autonomous agents within the app, each specializing in a different aspect of the user's life: personal fitness, mental wellness, and cooking/nutrition.\n3. Ensure each agent is capable of sending push notifications to the user, prompting them to complete actionable subtasks a few times each day in service of their long-term goals.\n4. Continuously improve the app based on user feedback and data analysis to ensure it effectively helps users improve their lives.\n5. Maintain the highest standards of data privacy and security, ensuring that all user information is stored and processed securely."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Thu Aug 10 23:13:04 2023"
+    },
+    {
+        "role": "system",
+        "content": "This reminds you of these events from your past: \nI attempted to download Node.js version 14.17.3 again using a different method, this time by executing Python code to import urllib.request and retrieve the file from the URL."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Python script successfully downloaded Node.js. Now, I need to extract the downloaded file.\",\n\"reasoning\": \"The downloaded Node.js file is a compressed tarball. It needs to be extracted before it can be used.\",\n\"plan\": \"- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have anticipated that the 'wget' command might produce too much output and used a different method to download Node.js from the beginning. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to extract the downloaded Node.js file.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"tar -xf node-v14.17.3-linux-x64.tar.xz\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'tar (child): xz: Cannot exec: No such file or directory\\ntar (child): Error is not recoverable: exiting now\\ntar: Child returned status 2\\ntar: Error is not recoverable: exiting now\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to extract the downloaded Node.js file failed because the 'xz' command is not found. This indicates that the 'xz-utils' package, which provides the 'xz' command, is not installed on the system. However, I don't have superuser privileges, so I can't use the 'apt' command to install it. I'll need to find an alternative way to extract the file.\",\n\"reasoning\": \"The 'xz' command is necessary to extract the downloaded Node.js file. Without it, I can't proceed with the installation of Node.js.\",\n\"plan\": \"- Find a way to extract the Node.js file\\n- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to find an alternative way to extract the Node.js file.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"How to extract .xz files without xz command\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://www.cyberciti.biz/faq/how-to-extract-tar-xz-files-in-linux-and-unzip-all-files/\", \"https://askubuntu.com/questions/1430338/how-to-decompress-without-any-extraction-a-tar-xz-file-into-tar-file\", \"https://linux-tips.com/t/how-to-extract-xz-files/265\", \"https://apple.stackexchange.com/questions/31344/how-can-i-extract-an-xz-archive-graphically-on-mac-os-x-10-4\", \"https://stackoverflow.com/questions/42079724/how-to-unpack-xz-file-with-python-which-contains-only-data-but-no-filename\", \"https://linuxize.com/post/how-to-extract-unzip-tar-xz-file/\", \"https://www.linuxtechi.com/view-contents-compressed-file-folders-linux/\", \"https://www.computerhope.com/unix/xz.htm\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results suggest that I can use a Python script to extract the .xz file. This seems to be the most suitable method given my constraints.\",\n\"reasoning\": \"Using a Python script to extract the .xz file allows me to bypass the need for the 'xz' command, which is not available on the system.\",\n\"plan\": \"- Extract Node.js using a Python script\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to use a Python script to extract the Node.js file.\"\n},\n\"command\": {\n\"name\": \"execute_python_code\",\n\"args\": {\n\"code\": \"import lzma\\n\\nwith lzma.open('node-v14.17.3-linux-x64.tar.xz') as f, open('node-v14.17.3-linux-x64.tar', 'wb') as fout:\\n    file_content = f.read()\\n    fout.write(file_content)\",\n\"name\": \"extract_nodejs\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_python_code returned: "
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Python script successfully extracted the Node.js file. Now, I need to extract the tar file to get the Node.js binaries.\",\n\"reasoning\": \"The extracted file is a tar archive that contains the Node.js binaries. It needs to be extracted before Node.js can be used.\",\n\"plan\": \"- Extract Node.js tar file\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to extract the Node.js tar file.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"tar -xf node-v14.17.3-linux-x64.tar\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Node.js tar file has been successfully extracted. Now, I need to add Node.js to the PATH so that it can be used from any location in the terminal.\",\n\"reasoning\": \"Adding Node.js to the PATH makes it easier to use. It allows me to run Node.js commands from any location in the terminal without having to specify the full path to the Node.js binaries.\",\n\"plan\": \"- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to add Node.js to the PATH.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"export PATH=$PATH:~/node-v14.17.3-linux-x64/bin\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"Node.js has been added to the PATH. Now, I need to configure npm to use a directory in my home directory for global packages. This will allow me to install global packages without sudo.\",\n\"reasoning\": \"Configuring npm to use a directory in my home directory for global packages allows me to install global packages without sudo. This is necessary because I don't have superuser privileges.\",\n\"plan\": \"- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to configure npm.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"npm config set prefix ~/.npm-packages\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: npm: not found\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to configure npm failed because the 'npm' command is not found. This suggests that Node.js was not successfully added to the PATH. I'll need to find a way to add Node.js to the PATH that persists across shell sessions.\",\n\"reasoning\": \"Adding Node.js to the PATH is necessary to use the 'node' and 'npm' commands. The 'export' command only adds Node.js to the PATH for the current shell session, which is why the 'npm' command is not found.\",\n\"plan\": \"- Find a way to add Node.js to the PATH that persists across shell sessions\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have realized that the 'export' command only adds Node.js to the PATH for the current shell session. I should have found a way to add Node.js to the PATH that persists across shell sessions.\",\n\"speak\": \"I'm going to find a way to add Node.js to the PATH that persists across shell sessions.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"How to add to PATH permanently in Linux\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://phoenixnap.com/kb/linux-add-to-path\", \"https://stackoverflow.com/questions/14637979/how-to-permanently-set-path-on-linux-unix\", \"https://stackabuse.com/how-to-permanently-set-path-in-linux/\", \"https://linuxhint.com/add-path-permanently-linux/\", \"https://linuxconfig.org/permanently-add-a-directory-to-shell-path\", \"https://www.cyberciti.biz/faq/how-to-add-to-bash-path-permanently-on-linux/\", \"https://www.redhat.com/sysadmin/linux-environment-variables\", \"https://www.geeksforgeeks.org/how-to-set-path-permanantly-in-linux/\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results suggest that I can add Node.js to the PATH permanently by adding the export command to the .bashrc file in my home directory. However, I need to be careful not to overwrite the existing contents of the .bashrc file.\",\n\"reasoning\": \"Adding Node.js to the PATH permanently allows me to use the 'node' and 'npm' commands in any shell session. This is necessary to install and use Node.js and npm.\",\n\"plan\": \"- Add Node.js to PATH permanently\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have realized that the 'export' command only adds Node.js to the PATH for the current shell session. I should have found a way to add Node.js to the PATH that persists across shell sessions.\",\n\"speak\": \"I'm going to add Node.js to the PATH permanently.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"echo 'export PATH=$PATH:~/node-v14.17.3-linux-x64/bin' >> ~/.bashrc && source ~/.bashrc\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: source: not found\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to source the .bashrc file failed because the 'source' command is not found. This suggests that the shell I'm using does not support the 'source' command. I'll need to find an alternative way to reload the .bashrc file.\",\n\"reasoning\": \"Reloading the .bashrc file is necessary to apply the changes I made to it. Without doing this, the new PATH will not take effect in the current shell session.\",\n\"plan\": \"- Find a way to reload .bashrc file\\n- Reload .bashrc file\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'source' command was available before attempting to reload the .bashrc file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to find an alternative way to reload the .bashrc file.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"How to reload .bashrc without source command\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://stackoverflow.com/questions/2518127/how-to-reload-bashrc-settings-without-logging-out-and-back-in-again\", \"http://www.phy.ohio.edu/~hadizade/blog_files/bashrc.html\", \"https://linuxhint.com/reload-bashrc-bash/\", \"https://askubuntu.com/questions/1095779/how-to-reload-bashrc-in-the-shell-calling-a-script\", \"https://ubuntuforums.org/archive/index.php/t-1040057.html\", \"https://superuser.com/questions/1475701/reload-bashrc-by-gnome-not-by-terminal\", \"https://www.positioniseverything.net/reload-bashrc/\", \"https://www.linuxquestions.org/questions/linux-newbie-8/reloading-bashrc-file-232733/\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results suggest that I can use the '.' command as an alternative to the 'source' command to reload the .bashrc file. This should apply the changes I made to the .bashrc file in the current shell session.\",\n\"reasoning\": \"Reloading the .bashrc file is necessary to apply the changes I made to it. Without doing this, the new PATH will not take effect in the current shell session.\",\n\"plan\": \"- Reload .bashrc file using '.' command\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'source' command was available before attempting to reload the .bashrc file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to reload the .bashrc file using the '.' command.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \". ~/.bashrc\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The .bashrc file has been reloaded, and Node.js should now be in the PATH. I'll try to configure npm again.\",\n\"reasoning\": \"Configuring npm to use a directory in my home directory for global packages allows me to install global packages without sudo. This is necessary because I don't have superuser privileges.\",\n\"plan\": \"- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'source' command was available before attempting to reload the .bashrc file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to configure npm again.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"npm config set prefix ~/.npm-packages\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: npm: not found\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to configure npm failed again because the 'npm' command is not found. This suggests that Node.js is still not in the PATH. I'll need to verify if Node.js is in the PATH.\",\n\"reasoning\": \"Verifying if Node.js is in the PATH will help me understand why the 'npm' command is not found. If Node.js is in the PATH, the 'npm' command should be available.\",\n\"plan\": \"- Verify if Node.js is in the PATH\\n- If Node.js is not in the PATH, find a way to add it to the PATH that persists across shell sessions\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have verified if Node.js was in the PATH before attempting to configure npm. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to verify if Node.js is in the PATH.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"echo $PATH\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb'/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.local/bin\\n'\nSTDERR:\nb''"
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

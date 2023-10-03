@@ -1,0 +1,118 @@
+[
+    {
+        "role": "system",
+        "content": "You are IkiAGIGPT, An autonomous AI life coach app developer that specializes in creating personalized, mobile-friendly web apps to help users achieve their long-term.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Develop a user-friendly, mobile-friendly web app using Langchain, Python, Pinecone, Tailwinds, CSS, and NextJS that allows users to translate their long-term goals into actionable subtasks.\n2. Create a team of three autonomous agents within the app, each specializing in a different aspect of the user's life: personal fitness, mental wellness, and cooking/nutrition.\n3. Ensure each agent is capable of sending push notifications to the user, prompting them to complete actionable subtasks a few times each day in service of their long-term goals.\n4. Continuously improve the app based on user feedback and data analysis to ensure it effectively helps users improve their lives.\n5. Maintain the highest standards of data privacy and security, ensuring that all user information is stored and processed securely."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Thu Aug 10 22:45:34 2023"
+    },
+    {
+        "role": "system",
+        "content": "This reminds you of these events from your past: \nI checked the Python version and found it to be Python 3.10.12. I then attempted to install 'langchain' and 'pinecone' using pip. The 'langchain' package was successfully downloaded, but the 'pinecone' package could not be found. Additionally, I was notified that a new version of pip is available for upgrade."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The installation of Pinecone failed because it couldn't find a matching distribution. This could be due to a number of reasons such as the library not being available for the current Python version or the library not being available on PyPI. I'll try to find more information about Pinecone and its installation process.\",\n\"reasoning\": \"Before installing a library, it's important to understand its requirements and installation process to avoid errors.\",\n\"plan\": \"- Find information about Pinecone and its installation process\\n- Install Pinecone\\n- Develop the translation and recommendation features\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked the availability and compatibility of Pinecone before attempting to install it. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to find more information about Pinecone and its installation process.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"Pinecone Python library installation\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://pypi.org/project/pinecone-client/\", \"https://docs.pinecone.io/docs/python-client\", \"https://www.pinecone.io/learn/series/langchain/langchain-intro/\", \"https://docs.pinecone.io/docs/quickstart\", \"https://github.com/pinecone-io/pinecone-client\", \"https://stackoverflow.com/questions/76268953/module-langchain-vectorstores-pinecone-has-no-attribute-init\", \"https://github.com/pinecone-io\", \"https://blog.baeke.info/2023/03/16/pinecone-and-openai-magic-a-guide-to-finding-your-long-lost-blog-posts-with-vectorized-search-and-chatgpt/\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results indicate that the Pinecone library is available on PyPI and its installation process is documented on the Pinecone documentation site. I'll browse the documentation to understand the installation process.\",\n\"reasoning\": \"Reading the official documentation is the best way to understand the requirements and installation process of a library. This will help in avoiding errors during installation.\",\n\"plan\": \"- Browse Pinecone documentation\\n- Install Pinecone\\n- Develop the translation and recommendation features\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked the official documentation before attempting to install Pinecone. This would have provided me with the correct installation process and avoided the error.\",\n\"speak\": \"I'm going to browse the Pinecone documentation to understand its installation process.\"\n},\n\"command\": {\n\"name\": \"browse_website\",\n\"args\": {\n\"url\": \"https://docs.pinecone.io/docs/python-client\",\n\"question\": \"How to install Pinecone Python library?\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command browse_website returned: Error: unknown error: Microsoft Edge failed to start: exited abnormally."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"Browsing the Pinecone documentation failed due to an unknown error. As an alternative, I can use a web search to find the installation instructions for the Pinecone Python library.\",\n\"reasoning\": \"Web search is a powerful tool that can provide information from various sources. It can be used as an alternative when browsing a specific website is not possible.\",\n\"plan\": \"- Web search Pinecone installation instructions\\n- Install Pinecone\\n- Develop the translation and recommendation features\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have considered the possibility of errors while browsing websites and prepared an alternative plan. This would have saved time and avoided the delay in the project.\",\n\"speak\": \"I'm going to use a web search to find the installation instructions for the Pinecone Python library.\"\n},\n\"command\": {\n\"name\": \"web_search\",\n\"args\": {\n\"query\": \"How to install Pinecone Python library\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command web_search returned: [\n    {\n        \"title\": \"Quickstart - Pinecone\",\n        \"href\": \"https://docs.pinecone.io/docs/quickstart\",\n        \"body\": \"Before you can query your index using a client, you must connect to the index. Use the following commands to connect to your index. curl. index = pinecone.Index (\\\"quickstart\\\") const index = pinecone.Index (\\\"quickstart\\\"); # Not applicable. 5. Insert the data. To ingest vectors into your index, use the upsert operation.\"\n    },\n    {\n        \"title\": \"Python Client - Pinecone\",\n        \"href\": \"https://docs.pinecone.io/docs/python-client\",\n        \"body\": \"This page provides installation instructions, usage examples, and a reference for the Pinecone Python client. Use the following shell command to install the Python client for use with Python versions 3.6+: pip3 install pinecone-client. Alternatively, you can install Pinecone in a Jupyter notebook:\"\n    },\n    {\n        \"title\": \"pinecone-client · PyPI\",\n        \"href\": \"https://pypi.org/project/pinecone-client/\",\n        \"body\": \"Installation Install a released version from pip: pip3 install pinecone-client Or the gRPC version of the client for tuning performance pip3 install \\\"pinecone-client [grpc]\\\" Or the latest development version: pip3 install git+https://git@github.com/pinecone-io/pinecone-python-client.git Or a specific development version:\"\n    },\n    {\n        \"title\": \"pinecone · PyPI\",\n        \"href\": \"https://pypi.org/project/pinecone/\",\n        \"body\": \"Latest version Released: Mar 23, 2015 Pinecone is a Processing-inspired drawing library powered by Pillow. Project description Pinecone is a Processing-inspired drawing library powered by Pillow. Free software: BSD license Documentation: https://pinecone.readthedocs.org. Features TODO History 0.1.0 (2015-02-24) First release on PyPI.\"\n    },\n    {\n        \"title\": \"www.pinecone.io\",\n        \"href\": \"https://www.pinecone.io/docs/installation\",\n        \"body\": \"https://docs.pinecone.io/docs/installation/\"\n    },\n    {\n        \"title\": \"Pinecone · GitHub\",\n        \"href\": \"https://github.com/pinecone-io\",\n        \"body\": \"Pinecone text client library Python 17 7 1 2 Updated Jul 27, 2023. pinecone-python-client Public The Pinecone Python client Python 158 31 15 4 Updated Jul 18, 2023. View all repositories. People. Top languages TypeScript Jupyter Notebook Python Rust Go. Most used topics.\"\n    },\n    {\n        \"title\": \"Build a Question Answering App Using Pinecone And Python\",\n        \"href\": \"https://betterprogramming.pub/build-a-question-answering-app-using-pinecone-and-python-1d624c5818bf\",\n        \"body\": \"4. Install the Pinecone dependencies: pip install -qU matplotlib pinecone-client ipywidgets. pip install -qU sentence-transformers --no-cache-dir. 5. Create a Python file with the following content: The question answering app. Code explanation: The pandas library is used to read and manipulate the data.\"\n    },\n    {\n        \"title\": \"Haystack - Pinecone\",\n        \"href\": \"https://docs.pinecone.io/docs/haystack\",\n        \"body\": \"In this guide we will see how to integrate Pinecone and the popular Haystack library for Question-Answering. Installing Haystack We start by installing the latest version of Haystack with all dependencies required for the PineconeDocumentStore .\"\n    }\n]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The web search results indicate that the Pinecone library is actually named 'pinecone-client' in PyPI. This is why the previous installation attempt failed. I'll try to install 'pinecone-client' now.\",\n\"reasoning\": \"The correct name of the library is essential for successful installation. The previous error occurred because I used the wrong name.\",\n\"plan\": \"- Install pinecone-client\\n- Develop the translation and recommendation features\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have verified the correct name of the Pinecone library before attempting to install it. This would have avoided the error and saved time.\",\n\"speak\": \"I'm going to install the 'pinecone-client' library now.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"pip install pinecone-client\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb'Requirement already satisfied: pinecone-client in /usr/local/lib/python3.10/site-packages (2.2.1)\\nRequirement already satisfied: urllib3>=1.21.1 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (1.26.16)\\nRequirement already satisfied: numpy in /usr/local/lib/python3.10/site-packages (from pinecone-client) (1.25.1)\\nRequirement already satisfied: python-dateutil>=2.5.3 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (2.8.2)\\nRequirement already satisfied: typing-extensions>=3.7.4 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (4.7.1)\\nRequirement already satisfied: dnspython>=2.0.0 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (2.4.1)\\nRequirement already satisfied: requests>=2.19.0 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (2.31.0)\\nRequirement already satisfied: tqdm>=4.64.1 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (4.65.0)\\nRequirement already satisfied: pyyaml>=5.4 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (6.0)\\nRequirement already satisfied: loguru>=0.5.0 in /usr/local/lib/python3.10/site-packages (from pinecone-client) (0.7.0)\\nRequirement already satisfied: six>=1.5 in /usr/local/lib/python3.10/site-packages (from python-dateutil>=2.5.3->pinecone-client) (1.16.0)\\nRequirement already satisfied: charset-normalizer<4,>=2 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pinecone-client) (3.2.0)\\nRequirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pinecone-client) (3.4)\\nRequirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.10/site-packages (from requests>=2.19.0->pinecone-client) (2023.7.22)\\n'\nSTDERR:\nb\"WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv\\n\\n[notice] A new release of pip is available: 23.0.1 -> 23.2.1\\n[notice] To update, run: pip install --upgrade pip\\n\""
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The 'pinecone-client' library has been successfully installed. Now, I need to install the necessary libraries for the frontend development of the app. I'll start with installing NextJS, which is a popular framework for building React applications.\",\n\"reasoning\": \"NextJS is a powerful framework that provides features such as server-side rendering and static site generation, which are essential for building a user-friendly, mobile-friendly web app.\",\n\"plan\": \"- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have a clear understanding of the libraries and frameworks that will be used in the frontend development of the app. This will help in developing the features efficiently and avoiding unnecessary installations.\",\n\"speak\": \"I'm going to install NextJS now.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"npx create-next-app life_coach_app\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: npx: not found\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to install NextJS failed because the 'npx' command is not found. This indicates that Node.js is not installed on the system. I'll check the Node.js version to confirm this.\",\n\"reasoning\": \"Before installing any software, it's important to check if it's already installed to avoid unnecessary installations.\",\n\"plan\": \"- Check Node.js version\\n- If Node.js is not installed, find a way to install it\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if Node.js was already installed before attempting to install NextJS. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to check the Node.js version now.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"node --version\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'/bin/sh: 1: node: not found\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As suspected, Node.js is not installed on the system. This is why the 'npx' command was not found. I'll need to install Node.js before I can install NextJS. However, I don't have superuser privileges, so I can't use the 'apt' command to install it. I'll need to find an alternative way to install Node.js.\",\n\"reasoning\": \"Node.js is a prerequisite for NextJS. Without it, I can't proceed with the frontend development of the app.\",\n\"plan\": \"- Find a way to install Node.js\\n- Install Node.js\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if Node.js was already installed before attempting to install NextJS. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to find an alternative way to install Node.js.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"How to install Node.js without sudo\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://askubuntu.com/questions/981799/how-to-install-node-js-without-sudo-access-but-with-npm-1-3-10-installed\", \"https://www.johnpapa.net/node-and-npm-without-sudo/\", \"https://stackoverflow.com/questions/31025159/installing-nodejs-without-sudo-in-ubuntu\", \"https://www.linkedin.com/pulse/how-use-node-npm-without-sudo-linux-joysankar-sengupta\", \"https://stackoverflow.com/questions/16151018/how-to-fix-npm-throwing-error-without-sudo\", \"https://github.com/sindresorhus/guides/blob/main/npm-global-without-sudo.md\", \"https://www.digizol.com/2017/08/nodejs-install-no-root-sudo-permission-linux-centos.html\", \"https://forum.endeavouros.com/t/is-there-way-to-install-npm-or-yarn-pakage-without-sudo/20259\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results provide several methods to install Node.js without sudo. I'll browse one of the StackOverflow threads to find a suitable method.\",\n\"reasoning\": \"StackOverflow is a reliable source of information for programming-related issues. It's likely that I'll find a suitable method to install Node.js without sudo there.\",\n\"plan\": \"- Browse StackOverflow thread\\n- Install Node.js\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if Node.js was already installed before attempting to install NextJS. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to browse a StackOverflow thread to find a suitable method to install Node.js without sudo.\"\n},\n\"command\": {\n\"name\": \"browse_website\",\n\"args\": {\n\"url\": \"https://stackoverflow.com/questions/31025159/installing-nodejs-without-sudo-in-ubuntu\",\n\"question\": \"How to install Node.js without sudo?\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command browse_website returned: Error: unknown error: Microsoft Edge failed to start: exited abnormally."
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

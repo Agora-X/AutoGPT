@@ -1,0 +1,14 @@
+[
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.\",\n\"reasoning\": \"Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.\",\n\"plan\": \"- Gather information about the website\\n- Understand the specific needs and preferences\",\n\"criticism\": \"I have not made any progress yet. I need to start gathering information and understanding the requirements.\",\n\"speak\": \"Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?\"\n},\n\"command\": {\n\"name\": \"speak\",\n\"args\": {}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command speak returned: Error: Cannot execute 'speak': unknown command. Do not try to use this command again."
+    }
+]

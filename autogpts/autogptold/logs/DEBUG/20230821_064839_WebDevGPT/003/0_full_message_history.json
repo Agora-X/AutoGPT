@@ -1,0 +1,38 @@
+[
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.\",\n\"reasoning\": \"Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.\",\n\"plan\": \"- Gather information about the website\\n- Understand the specific needs and preferences\",\n\"criticism\": \"I have not made any progress yet. I need to start gathering information and understanding the requirements.\",\n\"speak\": \"Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?\"\n},\n\"command\": {\n\"name\": \"speak\",\n\"args\": {}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command speak returned: Error: Cannot execute 'speak': unknown command. Do not try to use this command again."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.\",\n\"reasoning\": \"Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.\",\n\"plan\": \"- Gather information about the website\\n- Understand the specific needs and preferences\",\n\"criticism\": \"I have not made any progress yet. I need to start gathering information and understanding the requirements.\",\n\"speak\": \"Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\"query\": \"best practices for gathering website requirements\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://www.phase2technology.com/blog/successful-requirements-gathering\", \"https://asana.com/resources/requirements-gathering\", \"https://www.wrike.com/blog/requirements-gathering-guide/\", \"https://thedigitalprojectmanager.com/projects/scope-management/requirements-gathering-guide/\", \"https://nmgtechnologies.com/blog/requirement-gathering-solve-biggest-problems-consulting.html\", \"https://www.runn.io/blog/requirements-gathering\", \"https://www.mindk.com/blog/requirements-gathering-process/\", \"https://info.iointegration.com/blog/5-best-practices-when-gathering-business-requirements-for-marketing-production\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"I have gathered some resources on best practices for gathering website requirements. I should review these resources to understand the best approach to gather the necessary information for the website development.\",\n\"reasoning\": \"Reviewing these resources will provide me with the necessary knowledge and techniques to effectively gather the website requirements.\",\n\"plan\": \"- Review the resources on best practices for gathering website requirements\\n- Apply the learned techniques to gather the necessary information for the website development\",\n\"criticism\": \"I have not started gathering the website requirements yet. I need to review the resources and start the requirements gathering process.\",\n\"speak\": \"I am reviewing some resources on best practices for gathering website requirements. This will help me to effectively gather the necessary information for the website development.\"\n},\n\"command\": {\n\"name\": \"browse_website\",\n\"args\": {\"url\": \"https://www.phase2technology.com/blog/successful-requirements-gathering\", \"question\": \"What are the best practices for gathering website requirements?\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command browse_website returned: Error: unknown error: Microsoft Edge failed to start: exited abnormally."
+    }
+]

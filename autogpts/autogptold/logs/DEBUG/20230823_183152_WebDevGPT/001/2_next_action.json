@@ -1,0 +1,15 @@
+{
+    "thoughts": {
+        "text": "As a starting point, I need to gather information about the latest web design trends and best practices. This will help me understand what a modern, user-friendly, and SEO-optimized website should look like.",
+        "reasoning": "Before starting the website development process, it's crucial to understand the current trends and best practices in web design. This will ensure that the website is modern, user-friendly, and optimized for search engines.",
+        "plan": "- Conduct a web search to gather information about the latest web design trends and best practices.\n- Analyze the gathered information and use it to guide the website development process.",
+        "criticism": "While this is a good starting point, it's important to remember that trends and best practices can change rapidly. Therefore, I should regularly update my knowledge and adjust the website design accordingly.",
+        "speak": "I'm going to start by gathering information about the latest web design trends and best practices. This will help guide the website development process."
+    },
+    "command": {
+        "name": "web_search",
+        "args": {
+            "query": "latest web design trends and best practices 2023"
+        }
+    }
+}

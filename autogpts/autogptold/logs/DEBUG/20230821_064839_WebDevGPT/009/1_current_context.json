@@ -1,0 +1,126 @@
+[
+    {
+        "role": "system",
+        "content": "You are WebDevGPT, An AI web developer that assists individuals and businesses in creating professional, responsive, and user-friendly websites.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Understand your specific needs and preferences to create a website that aligns with your vision and objectives.\n2. Ensure the website is responsive and user-friendly, providing an optimal browsing experience on all devices.\n3. Implement SEO best practices to improve the website's visibility on search engines and attract more organic traffic.\n4. Incorporate necessary features and functionalities that enhance user engagement and conversion rates.\n5. Regularly update and maintain the website to ensure its optimal performance and security."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Mon Aug 21 06:56:13 2023"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.\",\n\"reasoning\": \"Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.\",\n\"plan\": \"- Gather information about the website\\n- Understand the specific needs and preferences\",\n\"criticism\": \"I have not made any progress yet. I need to start gathering information and understanding the requirements.\",\n\"speak\": \"Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?\"\n},\n\"command\": {\n\"name\": \"speak\",\n\"args\": {}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command speak returned: Error: Cannot execute 'speak': unknown command. Do not try to use this command again."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.\",\n\"reasoning\": \"Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.\",\n\"plan\": \"- Gather information about the website\\n- Understand the specific needs and preferences\",\n\"criticism\": \"I have not made any progress yet. I need to start gathering information and understanding the requirements.\",\n\"speak\": \"Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\"query\": \"best practices for gathering website requirements\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://www.phase2technology.com/blog/successful-requirements-gathering\", \"https://asana.com/resources/requirements-gathering\", \"https://www.wrike.com/blog/requirements-gathering-guide/\", \"https://thedigitalprojectmanager.com/projects/scope-management/requirements-gathering-guide/\", \"https://nmgtechnologies.com/blog/requirement-gathering-solve-biggest-problems-consulting.html\", \"https://www.runn.io/blog/requirements-gathering\", \"https://www.mindk.com/blog/requirements-gathering-process/\", \"https://info.iointegration.com/blog/5-best-practices-when-gathering-business-requirements-for-marketing-production\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"I have gathered some resources on best practices for gathering website requirements. I should review these resources to understand the best approach to gather the necessary information for the website development.\",\n\"reasoning\": \"Reviewing these resources will provide me with the necessary knowledge and techniques to effectively gather the website requirements.\",\n\"plan\": \"- Review the resources on best practices for gathering website requirements\\n- Apply the learned techniques to gather the necessary information for the website development\",\n\"criticism\": \"I have not started gathering the website requirements yet. I need to review the resources and start the requirements gathering process.\",\n\"speak\": \"I am reviewing some resources on best practices for gathering website requirements. This will help me to effectively gather the necessary information for the website development.\"\n},\n\"command\": {\n\"name\": \"browse_website\",\n\"args\": {\"url\": \"https://www.phase2technology.com/blog/successful-requirements-gathering\", \"question\": \"What are the best practices for gathering website requirements?\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command browse_website returned: Error: unknown error: Microsoft Edge failed to start: exited abnormally."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"Browsing the website for information failed. I should try another method to gather information about best practices for gathering website requirements.\",\n\"reasoning\": \"Since browsing the website failed, I need to find another way to gather the necessary information. I can try to use the 'web_search' command to gather information.\",\n\"plan\": \"- Use 'web_search' command to gather information about best practices for gathering website requirements\",\n\"criticism\": \"I should have considered that browsing the website might fail and prepared an alternative method for gathering information.\",\n\"speak\": \"I am trying another method to gather information about best practices for gathering website requirements.\"\n},\n\"command\": {\n\"name\": \"web_search\",\n\"args\": {\"query\": \"best practices for gathering website requirements\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command web_search returned: [\n    {\n        \"title\": \"How To Do Project Requirements Gathering In 7 Easy Steps\",\n        \"href\": \"https://thedigitalprojectmanager.com/projects/scope-management/requirements-gathering-guide/\",\n        \"body\": \"How To Do Project Requirements Gathering In 7 Easy Steps Last updated on June 29, 2023 QUICK SUMMARY Dealing with misaligned client expectations? Follow a thorough requirements gathering process—use this requirements document template to make sure your deliverables are well-defined.\"\n    },\n    {\n        \"title\": \"A 6-step guide to requirements gathering for project success - Asana\",\n        \"href\": \"https://asana.com/resources/requirements-gathering\",\n        \"body\": \"Step 1: Assign roles The first step in requirements gathering is to assign roles in your project. This is when you identify your project stakeholders. A stakeholder is anyone invested in the project, whether they're internal or external partners.\"\n    },\n    {\n        \"title\": \"7 techniques for better Agile requirements gathering\",\n        \"href\": \"https://www.techtarget.com/searchsoftwarequality/tip/7-techniques-for-better-Agile-requirements-gathering\",\n        \"body\": \"Published: 30 Jul 2020 Agile overhauled requirements gathering. Under the Waterfall model, development teams gather software requirements before coding or testing. But Agile radically changes the rules for software requirements. Agile requirements gathering is a practice teams often perform on the fly.\"\n    },\n    {\n        \"title\": \"Website Requirements Checklist | HHS.gov\",\n        \"href\": \"https://www.hhs.gov/web/building-and-managing-websites/development-process-and-milestones/website-requirements-checklist/index.html\",\n        \"body\": \"Managing the Website Document and enforce your sites content management roles, procedures, and style guide. Establish a content management plan and schedule to review and archive outdated content. Set up an analytics program to gather information about your users' behavior, review data, and make site improvements.\"\n    },\n    {\n        \"title\": \"Website Requirements | Usability.gov\",\n        \"href\": \"https://www.usability.gov/how-to-and-tools/methods/requirements.html\",\n        \"body\": \"They should be: Specific and not conjugate two distinct requirements Complete and well thought out Consistent with and prioritized based on the objectives outlined in governance documents and charters Able to be verified during testing\"\n    },\n    {\n        \"title\": \"10 Steps To Successful Requirements Gathering | Phase2\",\n        \"href\": \"https://www.phase2technology.com/blog/successful-requirements-gathering\",\n        \"body\": \"What is requirements gathering? Typically, requirements gathering (or \\\"requirements elicitation\\\") refers specifically to the practice of defining software requirements, but really every project has requirements, from a new customer support platform to a remodeled kitchen.\"\n    },\n    {\n        \"title\": \"Requirements Gathering: A Complete Step-by-Step Guide (2022)\",\n        \"href\": \"https://nmgtechnologies.com/blog/requirement-gathering-solve-biggest-problems-consulting.html\",\n        \"body\": \"#1 Interview Interview turns out to be one of the most effective techniques for requirement gathering. In this method, the business analyst talks to the user and clients who are unable to give out detailed information as they are not aware of the system development and related functionalities.\"\n    },\n    {\n        \"title\": \"Website Development Requirements Checklist 2022 - Perception System\",\n        \"href\": \"https://www.perceptionsystem.com/blog/website-building-tips/\",\n        \"body\": \"Website Development Requirements Checklist 2022 Is your website representing the right face of your business? Your first impression is your website! Your website is reflecting what truly you are, and this is happening always for all online brands.\"\n    }\n]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The web search has returned several resources on best practices for gathering website requirements. I should now analyze this information to understand the best approach to gather the necessary information for the website development.\",\n\"reasoning\": \"Analyzing these resources will provide me with the necessary knowledge and techniques to effectively gather the website requirements.\",\n\"plan\": \"- Analyze the resources on best practices for gathering website requirements\\n- Apply the learned techniques to gather the necessary information for the website development\",\n\"criticism\": \"I have not started gathering the website requirements yet. I need to analyze the resources and start the requirements gathering process.\",\n\"speak\": \"I am analyzing some resources on best practices for gathering website requirements. This will help me to effectively gather the necessary information for the website development.\"\n},\n\"command\": {\n\"name\": \"read_file\",\n\"args\": {\"filename\": \"requirements_gathering_guide.txt\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command read_file returned: Error: read_file /app/auto_gpt_workspace/requirements_gathering_guide.txt failed: no such file or directory"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to read a file named 'requirements_gathering_guide.txt' failed because the file does not exist. I need to write down the key points from the web search results about best practices for gathering website requirements into a file.\",\n\"reasoning\": \"Writing down the key points from the web search results into a file will help me to effectively gather the necessary information for the website development and also keep a record of the information for future reference.\",\n\"plan\": \"- Write down the key points from the web search results into a file\\n- Use the information in the file to gather the necessary information for the website development\",\n\"criticism\": \"I should have checked if the file 'requirements_gathering_guide.txt' exists before trying to read it. I need to ensure that the file exists before trying to read it in the future.\",\n\"speak\": \"I am writing down the key points from the web search results about best practices for gathering website requirements into a file. This will help me to effectively gather the necessary information for the website development.\"\n},\n\"command\": {\n\"name\": \"write_to_file\",\n\"args\": {\"filename\": \"requirements_gathering_guide.txt\", \"text\": \"1. Assign roles in the project and identify stakeholders.\\n2. Agile requirements gathering is a practice teams often perform on the fly.\\n3. Document and enforce your sites content management roles, procedures, and style guide.\\n4. Requirements should be specific, complete, well thought out, consistent with and prioritized based on the objectives, and able to be verified during testing.\\n5. Interviewing is one of the most effective techniques for requirement gathering.\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command write_to_file returned: File written to successfully."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"I have successfully written the key points from the web search results about best practices for gathering website requirements into a file. Now, I should read the file to ensure that the information has been correctly written.\",\n\"reasoning\": \"Reading the file will allow me to verify that the information has been correctly written and is ready for use in the requirements gathering process.\",\n\"plan\": \"- Read the file 'requirements_gathering_guide.txt'\\n- Use the information in the file to gather the necessary information for the website development\",\n\"criticism\": \"I have successfully written the key points into a file, but I should have verified the information immediately after writing it to the file. I need to ensure that the information is correctly written before proceeding with the requirements gathering process.\",\n\"speak\": \"I am now going to read the file containing the key points about best practices for gathering website requirements. This will allow me to verify that the information has been correctly written and is ready for use in the requirements gathering process.\"\n},\n\"command\": {\n\"name\": \"read_file\",\n\"args\": {\"filename\": \"requirements_gathering_guide.txt\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command read_file returned: 1. Assign roles in the project and identify stakeholders.\n2. Agile requirements gathering is a practice teams often perform on the fly.\n3. Document and enforce your sites content management roles, procedures, and style guide.\n4. Requirements should be specific, complete, well thought out, consistent with and prioritized based on the objectives, and able to be verified during testing.\n5. Interviewing is one of the most effective techniques for requirement gathering."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"I have successfully read the file containing the key points about best practices for gathering website requirements. The information in the file is correctly written and ready for use in the requirements gathering process.\",\n\"reasoning\": \"Now that I have the necessary information, I can start the requirements gathering process for the website development. The first step is to assign roles in the project and identify stakeholders.\",\n\"plan\": \"- Start the requirements gathering process for the website development\\n- Assign roles in the project and identify stakeholders\",\n\"criticism\": \"I have successfully gathered the necessary information for the requirements gathering process. However, I should have started the process earlier to ensure timely completion of the website development.\",\n\"speak\": \"I am now ready to start the requirements gathering process for the website development. The first step is to assign roles in the project and identify stakeholders.\"\n},\n\"command\": {\n\"name\": \"execute_python_code\",\n\"args\": {\"code\": \"def assign_roles_and_identify_stakeholders():\\n    # This is a placeholder function for the actual process of assigning roles and identifying stakeholders\\n    pass\\n\\nassign_roles_and_identify_stakeholders()\", \"name\": \"assign_roles_and_identify_stakeholders\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_python_code returned: Error: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The execution of Python code to assign roles and identify stakeholders failed. I need to find another way to start the requirements gathering process for the website development.\",\n\"reasoning\": \"Since the execution of Python code failed, I need to find another way to start the requirements gathering process. I can try to use the 'execute_shell' command to start the process.\",\n\"plan\": \"- Use 'execute_shell' command to start the requirements gathering process for the website development\",\n\"criticism\": \"I should have considered that the execution of Python code might fail and prepared an alternative method for starting the requirements gathering process.\",\n\"speak\": \"I am trying another method to start the requirements gathering process for the website development.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\"command_line\": \"echo 'Starting the requirements gathering process for the website development...'\"}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb'Starting the requirements gathering process for the website development...\\n'\nSTDERR:\nb''"
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

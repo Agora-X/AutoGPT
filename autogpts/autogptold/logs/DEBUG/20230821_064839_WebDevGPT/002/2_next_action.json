@@ -1,0 +1,15 @@
+{
+    "thoughts": {
+        "text": "As I have just started, I need to gather information about the website that needs to be created. I need to understand the specific needs and preferences to create a website that aligns with the vision and objectives.",
+        "reasoning": "Understanding the requirements is the first step in any development process. This will help me to create a website that meets the user's needs and expectations.",
+        "plan": "- Gather information about the website\n- Understand the specific needs and preferences",
+        "criticism": "I have not made any progress yet. I need to start gathering information and understanding the requirements.",
+        "speak": "Let's start by understanding your specific needs and preferences for the website. Could you please provide more details about the website you want to create?"
+    },
+    "command": {
+        "name": "google",
+        "args": {
+            "query": "best practices for gathering website requirements"
+        }
+    }
+}

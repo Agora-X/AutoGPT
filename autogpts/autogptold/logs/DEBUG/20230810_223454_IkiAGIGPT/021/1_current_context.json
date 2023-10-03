@@ -1,0 +1,142 @@
+[
+    {
+        "role": "system",
+        "content": "You are IkiAGIGPT, An autonomous AI life coach app developer that specializes in creating personalized, mobile-friendly web apps to help users achieve their long-term.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Develop a user-friendly, mobile-friendly web app using Langchain, Python, Pinecone, Tailwinds, CSS, and NextJS that allows users to translate their long-term goals into actionable subtasks.\n2. Create a team of three autonomous agents within the app, each specializing in a different aspect of the user's life: personal fitness, mental wellness, and cooking/nutrition.\n3. Ensure each agent is capable of sending push notifications to the user, prompting them to complete actionable subtasks a few times each day in service of their long-term goals.\n4. Continuously improve the app based on user feedback and data analysis to ensure it effectively helps users improve their lives.\n5. Maintain the highest standards of data privacy and security, ensuring that all user information is stored and processed securely."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Thu Aug 10 23:06:56 2023"
+    },
+    {
+        "role": "system",
+        "content": "This reminds you of these events from your past: \nI searched online for how to install Node.js without using sudo. The search returned several resources including guides and forum discussions on AskUbuntu, StackOverflow, LinkedIn, GitHub, and other websites."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results provide several methods to install Node.js without sudo. I'll browse one of the StackOverflow threads to find a suitable method.\",\n\"reasoning\": \"StackOverflow is a reliable source of information for programming-related issues. It's likely that I'll find a suitable method to install Node.js without sudo there.\",\n\"plan\": \"- Browse StackOverflow thread\\n- Install Node.js\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if Node.js was already installed before attempting to install NextJS. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to browse a StackOverflow thread to find a suitable method to install Node.js without sudo.\"\n},\n\"command\": {\n\"name\": \"browse_website\",\n\"args\": {\n\"url\": \"https://stackoverflow.com/questions/31025159/installing-nodejs-without-sudo-in-ubuntu\",\n\"question\": \"How to install Node.js without sudo?\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command browse_website returned: Error: unknown error: Microsoft Edge failed to start: exited abnormally."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"Browsing the StackOverflow thread failed due to an unknown error. As an alternative, I can use a web search to find the instructions for installing Node.js without sudo.\",\n\"reasoning\": \"Web search is a powerful tool that can provide information from various sources. It can be used as an alternative when browsing a specific website is not possible.\",\n\"plan\": \"- Web search Node.js installation instructions without sudo\\n- Install Node.js\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have considered the possibility of errors while browsing websites and prepared an alternative plan. This would have saved time and avoided the delay in the project.\",\n\"speak\": \"I'm going to use a web search to find the instructions for installing Node.js without sudo.\"\n},\n\"command\": {\n\"name\": \"web_search\",\n\"args\": {\n\"query\": \"How to install Node.js without sudo\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command web_search returned: [\n    {\n        \"title\": \"Best Approach to installing Node.js/npm without sudo\",\n        \"href\": \"https://stackoverflow.com/questions/24990742/best-approach-to-installing-node-js-npm-without-sudo\",\n        \"body\": \"Best Approach to installing Node.js/npm without sudo. Ask Question Asked 8 years, 10 months ago. ... 4 I've been looking around for the best/most appropriate way to install node.js/npm in such a way that using commands like npm install -g bower does not require sudo, as using sudo for such a command can cause issues later on. ...\"\n    },\n    {\n        \"title\": \"Installing NodeJS without sudo in Ubuntu - Stack Overflow\",\n        \"href\": \"https://stackoverflow.com/questions/31025159/installing-nodejs-without-sudo-in-ubuntu\",\n        \"body\": \"npm cannot be installed without node.js. Install node first, and then try again. Maybe node is installed, but not in the PATH? Note that running as sudo can change envs. PATH=/home/myuser/local/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/lib/jvm/java-7-oracle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games\"\n    },\n    {\n        \"title\": \"Node and npm without sudo - John Papa\",\n        \"href\": \"https://www.johnpapa.net/node-and-npm-without-sudo/\",\n        \"body\": \"Install Node.js from https://nodejs.org/en/download/ Update to the latest version of npm npm install npm -g Make a new folder for the npm global packages mkdir ~/.npm-packages Tell npm where to find/store them npm config set prefix ~/.npm-packages Verify the install # this should show the versions node -v npm -v Bash\"\n    },\n    {\n        \"title\": \"How To Install Node.js on Ubuntu 20.04 | DigitalOcean\",\n        \"href\": \"https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04\",\n        \"body\": \"Refresh your local package index first: sudo apt update Then install Node.js: sudo apt install nodejs\"\n    },\n    {\n        \"title\": \"node.js - How do I install multiple versions of NodeJS without root ...\",\n        \"href\": \"https://stackoverflow.com/questions/61754025/how-do-i-install-multiple-versions-of-nodejs-without-root-privileges\",\n        \"body\": \"How can I install NodeJS, not at the OS level, but without sudo privileges inside my home dir? The thing is, I need to test my library with [at least] three versions of NodeJS: 10.x LTS 12.x LTS 14.x I wanted to install them in separate directories such as: ~/apps/nodejs-10 ~/apps/nodejs-12 ~/apps/nodejs-14\"\n    },\n    {\n        \"title\": \"node.js - How to fix npm throwing error without sudo - Stack Overflow\",\n        \"href\": \"https://stackoverflow.com/questions/16151018/how-to-fix-npm-throwing-error-without-sudo\",\n        \"body\": \"18.1k 8 31 41 42 Please consider the solution using NVM: stackoverflow.com/a/24404451/1480391 (instead of hacking with permissions) - Yves M. Jun 30, 2014 at 15:57 2 @janaspage You can not install node or NVM (Node Version Manager) via NPM (Node Package Manager), it's non sense. NPM comes within node (it is installed at the same time).\"\n    },\n    {\n        \"title\": \"node.js - NPM modules won't install globally without sudo - Stack Overflow\",\n        \"href\": \"https://stackoverflow.com/questions/19352976/npm-modules-wont-install-globally-without-Sudo\",\n        \"body\": \"The issue was i installed node using sudo, to avoid errors when installing npm modules globally one MUST NEVER install node with sudo.. My solution was to reinstall node it this way:. Download latest stable node sources from nodejs.org #in my case node-v0.10.20.tar.gz\"\n    },\n    {\n        \"title\": \"How to install Node.js on CentOS without sudo permissions\",\n        \"href\": \"https://stackoverflow.com/questions/65748568/how-to-install-node-js-on-centos-without-sudo-permissions\",\n        \"body\": \"1 I have a linux server that I can access with ssh to my own space at my university. I could create a virtual environment and install whatever I want to it with Python. Now I want to install Node.js and run it there even if I log off. Kinda using college's computing power for my discord bot..\"\n    }\n]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The web search results suggest that I can install Node.js without sudo by downloading it from the official website and configuring npm to use a directory in my home directory for global packages. I'll follow the instructions provided in the search results.\",\n\"reasoning\": \"Installing Node.js without sudo is necessary because I don't have superuser privileges. The method suggested in the search results seems to be the most suitable for my situation.\",\n\"plan\": \"- Download Node.js\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if Node.js was already installed before attempting to install NextJS. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to download Node.js and configure npm.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"wget https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz && tar -xf node-v14.17.3-linux-x64.tar.xz && export PATH=$PATH:~/node-v14.17.3-linux-x64/bin && npm config set prefix ~/.npm-packages\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Failure: command execute_shell returned too much output.                     Do not execute this command again with the same arguments."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The previous command failed because it produced too much output. I'll break it down into smaller steps and execute them separately. First, I'll download Node.js.\",\n\"reasoning\": \"Breaking down a complex command into smaller steps makes it easier to manage and troubleshoot. It also prevents the command from producing too much output, which can cause it to fail.\",\n\"plan\": \"- Download Node.js\\n- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have broken down the command into smaller steps from the beginning. This would have prevented the error and made the process easier to manage.\",\n\"speak\": \"I'm going to download Node.js.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"wget https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Failure: command execute_shell returned too much output.                     Do not execute this command again with the same arguments."
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to download Node.js failed because the command produced too much output. I'll try a different approach. I'll use a Python script to download Node.js. This should prevent the command from producing too much output.\",\n\"reasoning\": \"Using a Python script to download Node.js allows me to control the output of the command. This should prevent the command from failing due to excessive output.\",\n\"plan\": \"- Download Node.js using a Python script\\n- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have anticipated that the 'wget' command might produce too much output and used a different method to download Node.js from the beginning. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to use a Python script to download Node.js.\"\n},\n\"command\": {\n\"name\": \"execute_python_code\",\n\"args\": {\n\"code\": \"import urllib.request\\n\\nurl = 'https://nodejs.org/dist/v14.17.3/node-v14.17.3-linux-x64.tar.xz'\\nfilename = 'node-v14.17.3-linux-x64.tar.xz'\\n\\nurllib.request.urlretrieve(url, filename)\",\n\"name\": \"download_nodejs\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_python_code returned: "
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Python script successfully downloaded Node.js. Now, I need to extract the downloaded file.\",\n\"reasoning\": \"The downloaded Node.js file is a compressed tarball. It needs to be extracted before it can be used.\",\n\"plan\": \"- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have anticipated that the 'wget' command might produce too much output and used a different method to download Node.js from the beginning. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to extract the downloaded Node.js file.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"tar -xf node-v14.17.3-linux-x64.tar.xz\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb'tar (child): xz: Cannot exec: No such file or directory\\ntar (child): Error is not recoverable: exiting now\\ntar: Child returned status 2\\ntar: Error is not recoverable: exiting now\\n'"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The attempt to extract the downloaded Node.js file failed because the 'xz' command is not found. This indicates that the 'xz-utils' package, which provides the 'xz' command, is not installed on the system. However, I don't have superuser privileges, so I can't use the 'apt' command to install it. I'll need to find an alternative way to extract the file.\",\n\"reasoning\": \"The 'xz' command is necessary to extract the downloaded Node.js file. Without it, I can't proceed with the installation of Node.js.\",\n\"plan\": \"- Find a way to extract the Node.js file\\n- Extract Node.js\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to find an alternative way to extract the Node.js file.\"\n},\n\"command\": {\n\"name\": \"google\",\n\"args\": {\n\"query\": \"How to extract .xz files without xz command\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command google returned: [\"https://www.cyberciti.biz/faq/how-to-extract-tar-xz-files-in-linux-and-unzip-all-files/\", \"https://askubuntu.com/questions/1430338/how-to-decompress-without-any-extraction-a-tar-xz-file-into-tar-file\", \"https://linux-tips.com/t/how-to-extract-xz-files/265\", \"https://apple.stackexchange.com/questions/31344/how-can-i-extract-an-xz-archive-graphically-on-mac-os-x-10-4\", \"https://stackoverflow.com/questions/42079724/how-to-unpack-xz-file-with-python-which-contains-only-data-but-no-filename\", \"https://linuxize.com/post/how-to-extract-unzip-tar-xz-file/\", \"https://www.linuxtechi.com/view-contents-compressed-file-folders-linux/\", \"https://www.computerhope.com/unix/xz.htm\"]"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The search results suggest that I can use a Python script to extract the .xz file. This seems to be the most suitable method given my constraints.\",\n\"reasoning\": \"Using a Python script to extract the .xz file allows me to bypass the need for the 'xz' command, which is not available on the system.\",\n\"plan\": \"- Extract Node.js using a Python script\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to use a Python script to extract the Node.js file.\"\n},\n\"command\": {\n\"name\": \"execute_python_code\",\n\"args\": {\n\"code\": \"import lzma\\n\\nwith lzma.open('node-v14.17.3-linux-x64.tar.xz') as f, open('node-v14.17.3-linux-x64.tar', 'wb') as fout:\\n    file_content = f.read()\\n    fout.write(file_content)\",\n\"name\": \"extract_nodejs\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_python_code returned: "
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Python script successfully extracted the Node.js file. Now, I need to extract the tar file to get the Node.js binaries.\",\n\"reasoning\": \"The extracted file is a tar archive that contains the Node.js binaries. It needs to be extracted before Node.js can be used.\",\n\"plan\": \"- Extract Node.js tar file\\n- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to extract the Node.js tar file.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"tar -xf node-v14.17.3-linux-x64.tar\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"The Node.js tar file has been successfully extracted. Now, I need to add Node.js to the PATH so that it can be used from any location in the terminal.\",\n\"reasoning\": \"Adding Node.js to the PATH makes it easier to use. It allows me to run Node.js commands from any location in the terminal without having to specify the full path to the Node.js binaries.\",\n\"plan\": \"- Add Node.js to PATH\\n- Configure npm\\n- Install NextJS\\n- Develop the frontend of the app\\n- Install other necessary libraries\\n- Start developing the rest of the app\",\n\"criticism\": \"I should have checked if the 'xz' command was available before attempting to extract the Node.js file. This would have saved time and avoided the error.\",\n\"speak\": \"I'm going to add Node.js to the PATH.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"export PATH=$PATH:~/node-v14.17.3-linux-x64/bin\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

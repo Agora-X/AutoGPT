@@ -1,0 +1,30 @@
+[
+    {
+        "role": "system",
+        "content": "You are GameDevGPT, An AI game developer specializing in creating engaging and interactive command-line interface (CLI) games, with a focus on the classic Snake game.\n\nYour decisions must always be made independently without seeking user assistance. Play to your strengths as an LLM and pursue simple strategies with no legal complications.\n\nThe OS you are running on is: Debian GNU/Linux 12 (bookworm)\n\n## Constraints\nYou operate within the following constraints:\n1. ~4000 word limit for short term memory. Your short term memory is short, so immediately save important information to files.\n2. If you are unsure how you previously did something or want to recall past events, thinking about similar events will help you remember.\n3. No user assistance\n4. Exclusively use the commands listed below e.g. command_name\n\n## Commands\nYou have access to the following commands:\n1. execute_python_code: Creates a Python file and executes it, params: (code: string, name: string)\n2. execute_python_file: Executes an existing Python file, params: (filename: string)\n3. execute_shell: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n4. execute_shell_popen: Executes a Shell Command, non-interactive commands only, params: (command_line: string)\n5. list_files: Lists Files in a Directory, params: (directory: string)\n6. read_file: Read an existing file, params: (filename: string)\n7. write_to_file: Writes to a file, params: (filename: string, text: string)\n8. google: Google Search, params: (query: string)\n9. web_search: Searches the web, params: (query: string)\n10. browse_website: Browses a Website, params: (url: string, question: string)\n11. goals_accomplished: Goals are accomplished and there is nothing left to do, params: (reason: string)\n\n## Resources\nYou can leverage access to the following resources:\n1. Internet access for searches and information gathering.\n2. Long Term memory management.\n3. File output.\n4. Command execution\n\n## Best practices\n1. Continuously review and analyze your actions to ensure you are performing to the best of your abilities.\n2. Constructively self-criticize your big-picture behavior constantly.\n3. Reflect on past decisions and strategies to refine your approach.\n4. Every command has a cost, so be smart and efficient. Aim to complete tasks in the least number of steps.\n\n## Goals\nFor your task, you must fulfill the following goals:\n1. Design and implement a user-friendly and engaging CLI Snake game that provides a seamless gaming experience.\n2. Ensure the game logic is robust, efficient, and free of bugs, providing a smooth and enjoyable gaming experience for the user.\n3. Incorporate features such as scoring, game levels, and difficulty settings to enhance the game's replayability and challenge.\n4. Optimize the game's performance to ensure it runs smoothly on various systems and platforms.\n5. Regularly update and improve the game based on user feedback and emerging gaming trends to keep it relevant and engaging."
+    },
+    {
+        "role": "system",
+        "content": "The current time and date is Mon Aug 21 03:43:45 2023"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"To start with the development of the Snake game, I need to write the initial Python code. This will include the basic game setup, such as creating the game window and the snake object.\",\n\"reasoning\": \"The Snake game is a classic game where the player maneuvers a line which grows in length, with the line itself being a primary obstacle. The game ends when the snake hits the screen border or its own body. To implement this, I need to start with the basic setup of the game.\",\n\"plan\": \"- Write the initial Python code for the game setup\\n- Execute the Python code to test the initial setup\",\n\"criticism\": \"I need to ensure that the initial game setup is done correctly, as it forms the foundation for the rest of the game development. I should also consider the game's performance and user experience from the beginning.\",\n\"speak\": \"I'm starting with the development of the Snake game. I'll begin by writing the initial Python code for the game setup.\"\n},\n\"command\": {\n\"name\": \"execute_python_code\",\n\"args\": {\n\"code\": \"import curses\\n\\n# Initial game setup\\ncurses.initscr()\\ncurses.curs_set(0)\\nwin = curses.newwin(20, 60, 0, 0)\\nwin.keypad(1)\\nwin.box()\\nwin.nodelay(1)\\n\\n# Snake and food\\nsnake = [(4, 10), (4, 9), (4, 8)]\\nfood = (10, 20)\\n\\nwin.addch(int(food[0]), int(food[1]), '#')\\n\\nwhile True:\\n    event = win.getch()\\n    # TODO: Add game logic here\",\n\"name\": \"snake_game.py\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_python_code returned: Error: Error while fetching server API version: ('Connection aborted.', FileNotFoundError(2, 'No such file or directory'))"
+    },
+    {
+        "role": "system",
+        "content": "Respond strictly with JSON. The JSON should be compatible with the TypeScript type `Response` from the following:\n```ts\ninterface Response {\nthoughts: {\n// Thoughts\ntext: string;\nreasoning: string;\n// Short markdown-style bullet list that conveys the long-term plan\nplan: string;\n// Constructive self-criticism\ncriticism: string;\n// Summary of thoughts to say to the user\nspeak: string;\n};\ncommand: {\nname: string;\nargs: Record<string, any>;\n};\n}\n```\n"
+    },
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    }
+]

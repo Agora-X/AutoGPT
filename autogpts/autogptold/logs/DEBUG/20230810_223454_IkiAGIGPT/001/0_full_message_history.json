@@ -1,0 +1,14 @@
+[
+    {
+        "role": "user",
+        "content": "Determine exactly one command to use based on the given goals and the progress you have made so far, and respond using the JSON schema specified previously:"
+    },
+    {
+        "role": "assistant",
+        "content": "{\n\"thoughts\": {\n\"text\": \"To start developing the web app, I need to set up the environment first. I'll create a directory for the project.\",\n\"reasoning\": \"Before starting the development of any project, it's important to have a dedicated workspace. This helps in organizing the project files and resources efficiently.\",\n\"plan\": \"- Create a project directory\\n- Install necessary libraries and frameworks\\n- Start developing the web app\",\n\"criticism\": \"I should have a clear plan on how to structure the project files and directories. This will help in maintaining the project in the long run.\",\n\"speak\": \"I'm going to start by setting up the project workspace.\"\n},\n\"command\": {\n\"name\": \"execute_shell\",\n\"args\": {\n\"command_line\": \"mkdir life_coach_app\"\n}\n}\n}"
+    },
+    {
+        "role": "system",
+        "content": "Command execute_shell returned: STDOUT:\nb''\nSTDERR:\nb''"
+    }
+]

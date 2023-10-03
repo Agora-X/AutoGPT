@@ -42,6 +42,7 @@ Stretch goals encompass additional features and integrations that enhance the fu
 
 - [ ] Add the ability for AutoGPT to call upon other specialist agents through the `./run agent start <agent name>` command.
 - [ ] Integrate other specialist agents, for example, the Ikigai agent for goal creation.
+- [ ] Implementation for AutoGPT to use generalist agents like Open-Interpreter and Multi-ON/HyperWrite/Athena as tools or abilities.
 - [ ] Research and integrate features from other inspiring Discord bots.
 - [ ] Enable AutoGPT to interact with other Discord bots as tools, including invoking more instances of AutoGPT and executing other Forge agents' commands.
    - [ ] Research and identify potential Discord bots that could be utilized as tools by AutoGPT.
